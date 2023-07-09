@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Text;
 
 using EvolutionRacingServer.Data;
 
@@ -31,7 +32,12 @@ namespace EvolutionRacingServer.Services
         public void LoadTrack()
         {
             var trackDefinition = File.ReadAllLines("SimpleTrack.json");
-            TrackContainer track = System.Text.Json.JsonSerializer.Deserialize<TrackContainer>(trackDefinition);
+            StringBuilder sb = new();
+            foreach (var str in trackDefinition)
+            {
+                sb.Append(str);
+            }
+            TrackContainer track = System.Text.Json.JsonSerializer.Deserialize<TrackContainer>(sb.ToString());
         }
 
         internal void RegisterVehicles(string[] racerIds)
