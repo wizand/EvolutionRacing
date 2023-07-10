@@ -75,7 +75,18 @@ namespace EvolutonRacingClient.Data
         }
         private List<Vehicle> GenerateNewGenerationBasedOnTheOldOne(List<Vehicle> previousGeneration)
         {
-
+            List<Vehicle> nextGeneration = new();
+            for (int i = -1; i < previousGeneration.Count / 4; i++)
+            {
+                if (i < 0)
+                {
+                    nextGeneration.Add(new Vehicle(previousGeneration[0], previousGeneration[0]));
+                }
+                else
+                {
+                    nextGeneration.Add(new Vehicle(previousGeneration[i], previousGeneration[i+1]));
+                }
+            }
             //TODO: Use the previous generation genes
             List<Vehicle> vehicles = new List<Vehicle>();
             for (int i = 0; i < 10000; i++)
