@@ -1,4 +1,5 @@
 using EvolutonRacingClient.Data;
+using MatBlazor;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -13,7 +14,12 @@ namespace EvolutonRacingClient
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
-            builder.Services.AddSingleton<WeatherForecastService>();
+            
+
+            builder.Services.AddScoped<RacingServerCommService>( (s) => new RacingServerCommService("http://localhost:7135"));
+            builder.Services.AddScoped<RacingViewModelService>();
+
+            builder.Services.AddMatBlazor();
 
             var app = builder.Build();
 

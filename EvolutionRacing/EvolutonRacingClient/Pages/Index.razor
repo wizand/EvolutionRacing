@@ -1,9 +1,55 @@
 ﻿@page "/"
-
+@using EvolutonRacingClient.Data;
+@inject RacingViewModelService racingViewModelService;
+@inject RacingServerCommService racingServerCommService
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+@if (RacingVm == null)
+{
+        <p>Loading.. .. ..</p>
+} 
+else
+{
+    <MatInputTextComponent Label="Server address" @bind-Value="ServerAddress"></MatInputTextComponent>
+    <p>Game game status: @RacingVm.GameStatus</p>
+    @if (RacingVm.Tick == -1)
+    {
+        <MatButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@RegisterNewGame">Register new game</MatButton>
+    }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    else
+    {
+        <MatButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@RegisterVehicles">Register vehicles</MatButton>
+    }
+
+}
+
+
+
+
+@code 
+{
+    public RacingViewModel RacingVm { get; set; } = null;
+    public string ServerAddress { get; set; } = "https://localhost:7135";
+    protected override void OnInitialized()
+    {
+        RacingVm = racingViewModelService.RacingViewModel;
+        base.OnInitialized();
+    }
+
+
+    public async Task RegisterNewGame() 
+    {
+        racingServerCommService.UpdateUrl(ServerAddress);
+        string gameId = await racingServerCommService.RacingServerCommunicator.RegisterNewGameAsync();
+        RacingVm.Tick = 0;
+        RacingVm.GameId = gameId;
+    }
+
+    public async Task RegisterVehicles()
+    {
+        
+    }
+}

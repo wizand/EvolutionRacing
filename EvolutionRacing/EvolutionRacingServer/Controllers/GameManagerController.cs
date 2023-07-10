@@ -16,14 +16,15 @@ namespace EvolutionRacingServer.Controllers
         {
             _raceManagerService = raceManagerService;
         }
-       
+
+        [HttpGet("NewGame")]
         public IActionResult CreateNewRace(string trackId)
         {
             string raceId = _raceManagerService.AddNewRace(trackId);
             return Ok(raceId);
         }
 
-        [HttpPost(Name = "RegisterVehicles")]
+        [HttpPost("RegisterVehicles")]
         public IActionResult RegisterVehicles(string raceId, string[] racerIds)
         {
             var racerManager = _raceManagerService.GetRace(raceId);
@@ -32,6 +33,7 @@ namespace EvolutionRacingServer.Controllers
             return Ok("Registered " + racerIds.Length + " vehicles for race " + raceId + ".");
         }
 
+        [HttpPost("UpdateVehicle")]
         public VehicleState UpdateVehicle(VehicleCommand newCommand) 
         {
             var raceManager = _raceManagerService.GetRace(newCommand.RaceId);
