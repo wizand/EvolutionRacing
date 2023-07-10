@@ -1,6 +1,6 @@
 ﻿namespace EvolutionRacingModels
 {
-    public class Class1
+    public class Vehicle
     {
 
     }
