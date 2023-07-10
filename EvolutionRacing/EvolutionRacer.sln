@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvolutionRacingServer", "EvolutionRacingServer\EvolutionRacingServer.csproj", "{72493F24-CA3D-4B24-A8CB-A6BD4D532923}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvolutonRacingClient", "EvolutonRacingClient\EvolutonRacingClient.csproj", "{02F384D9-DDA8-45FF-8C73-58292E182F69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		BothDebug|Any CPU = BothDebug|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72493F24-CA3D-4B24-A8CB-A6BD4D532923}.BothDebug|Any CPU.ActiveCfg = BothDebug|Any CPU
+		{72493F24-CA3D-4B24-A8CB-A6BD4D532923}.BothDebug|Any CPU.Build.0 = BothDebug|Any CPU
+		{72493F24-CA3D-4B24-A8CB-A6BD4D532923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72493F24-CA3D-4B24-A8CB-A6BD4D532923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72493F24-CA3D-4B24-A8CB-A6BD4D532923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72493F24-CA3D-4B24-A8CB-A6BD4D532923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F384D9-DDA8-45FF-8C73-58292E182F69}.BothDebug|Any CPU.ActiveCfg = BothDebug|Any CPU
+		{02F384D9-DDA8-45FF-8C73-58292E182F69}.BothDebug|Any CPU.Build.0 = BothDebug|Any CPU
+		{02F384D9-DDA8-45FF-8C73-58292E182F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F384D9-DDA8-45FF-8C73-58292E182F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F384D9-DDA8-45FF-8C73-58292E182F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F384D9-DDA8-45FF-8C73-58292E182F69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4326029C-A47B-4B10-B887-38CB2AD4899C}
+	EndGlobalSection
+EndGlobal
