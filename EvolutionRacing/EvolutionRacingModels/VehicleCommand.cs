@@ -1,4 +1,4 @@
-﻿namespace EvolutionRacingServer.Data
+﻿namespace EvolutionRacingModels
 {
     public class VehicleCommand
     {

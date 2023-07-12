@@ -1,6 +1,6 @@
 ﻿using EvolutionRacingServer.Services;
 
-namespace EvolutionRacingServer.Data
+namespace EvolutionRacingModels
 {
     public class VehicleState
     {

@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography.X509Certificates;
-using EvolutionRacingServer.Data;
 
-namespace EvolutionRacingServer.Services
+
+namespace  EvolutionRacingModels
 {
     public class Racer
     {

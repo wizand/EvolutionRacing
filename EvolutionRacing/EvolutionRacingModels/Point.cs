@@ -1,5 +1,5 @@
-﻿namespace EvolutionRacingServer.Services
-{
+﻿namespace EvolutionRacingModels
+{ 
     public class Point
     {
         private float _x;
@@ -13,7 +13,10 @@
             Y = y;
         }
 
-
-
+    public override string ToString()
+    {
+        return $"{X},{Y}";
     }
+
+}
 }
