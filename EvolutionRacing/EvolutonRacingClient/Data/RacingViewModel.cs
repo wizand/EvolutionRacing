@@ -29,8 +29,8 @@ namespace EvolutonRacingClient.Data
             }
         }
 
-        private RacerManager? _racerManager = null;
-        public RacerManager Racers 
+        private ClientRacerManager? _racerManager = null;
+        public ClientRacerManager Racers 
         { 
             get 
             { 

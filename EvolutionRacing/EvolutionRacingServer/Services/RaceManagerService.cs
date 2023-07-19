@@ -9,21 +9,21 @@ namespace EvolutionRacingServer.Services
             _racerManagers = new();
         }
 
-        Dictionary<string, RacerManager> _racerManagers;
+        Dictionary<string, ServerRacerManager> _racerManagers;
 
         public string AddNewRace(string trackId)
         {
             string raceId = Guid.NewGuid().ToString(); 
-            _racerManagers.Add(raceId, new RacerManager(trackId, raceId));
+            _racerManagers.Add(raceId, new ServerRacerManager(trackId, raceId));
             return raceId;
         }
 
-        public RacerManager GetRace(string id) 
+        public ServerRacerManager GetRace(string id) 
         {
             return _racerManagers[id];
         }
 
-        internal void UpdateRacerManager(RacerManager racerManager)
+        internal void UpdateRacerManager(ServerRacerManager racerManager)
         {
             _racerManagers[racerManager.RaceId] = racerManager;
         }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Razor.Hosting;
 
 namespace EvolutionRacingServer.Services
 {
-    public class RacerManager
+    public class ServerRacerManager
     {
         public string RaceId { get; set; } = "";
         public string TrackId { get; }
@@ -14,7 +14,7 @@ namespace EvolutionRacingServer.Services
         int MaxTick = 99999;
         Dictionary<string, Racer> Racers = null;
 
-        public RacerManager(string trackId, string raceId)
+        public ServerRacerManager(string trackId, string raceId)
         {
             TrackId = trackId;
             RaceId = raceId;
