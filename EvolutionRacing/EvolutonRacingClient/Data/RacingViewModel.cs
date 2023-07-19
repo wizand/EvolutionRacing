@@ -29,79 +29,20 @@ namespace EvolutonRacingClient.Data
             }
         }
 
-        private VehicleManager? _vehicleManager = null;
-        public VehicleManager Vehicles 
+        private RacerManager? _racerManager = null;
+        public RacerManager Racers 
         { 
             get 
             { 
-                if (_vehicleManager == null)
+                if (_racerManager == null)
                 {
-                    _vehicleManager = new();
+                    _racerManager = new();
                 }
-                return _vehicleManager;
+                return _racerManager;
             }
-            set => _vehicleManager = value; 
+            set => _racerManager = value; 
         }
-        
+
     }
 
-    public class VehicleManager
-    {
-
-        public VehicleManager()
-        {
-            vehicleGeneration = GenerateInitialGeneration();
-        }
-
-
-        public VehicleManager(List<Vehicle> previousGeneration) 
-        {
-            vehicleGeneration = GenerateNewGenerationBasedOnTheOldOne(previousGeneration);
-        }
-
-
-        List<Vehicle> vehicleGeneration = new();
-        
-        
-        private List<Vehicle> GenerateInitialGeneration()
-        {
-            List<Vehicle> vehicles = new List<Vehicle>();
-            for (int i = 0; i < 10000; i++)
-            {
-                vehicles.Add(new Vehicle());
-            }
-
-            return vehicles;
-        }
-        private List<Vehicle> GenerateNewGenerationBasedOnTheOldOne(List<Vehicle> previousGeneration)
-        {
-            List<Vehicle> nextGeneration = new();
-            for (int i = -1; i < previousGeneration.Count / 4; i++)
-            {
-                if (i < 0)
-                {
-                    nextGeneration.Add(new Vehicle(previousGeneration[0], previousGeneration[0]));
-                }
-                else
-                {
-                    nextGeneration.Add(new Vehicle(previousGeneration[i], previousGeneration[i+1]));
-                }
-            }
-            //TODO: Use the previous generation genes
-            List<Vehicle> vehicles = new List<Vehicle>();
-            for (int i = 0; i < 10000; i++)
-            {
-                vehicles.Add(new Vehicle());
-            }
-
-            return vehicles;
-        }
-
-
-
-    }
-    public class Vehicle
-    {
-        
-    }
 }

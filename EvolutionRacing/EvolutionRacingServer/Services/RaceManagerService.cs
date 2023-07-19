@@ -1,6 +1,4 @@
-﻿using EvolutionRacingServer.Data;
-using Microsoft.AspNetCore.Mvc.Razor;
-
+﻿
 namespace EvolutionRacingServer.Services
 {
     public class RaceManagerService

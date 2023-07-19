@@ -1,8 +1,6 @@
 ﻿using System.Data;
 using System.Text;
-
-using EvolutionRacingServer.Data;
-
+using EvolutionRacingModels;
 using Microsoft.AspNetCore.Razor.Hosting;
 
 namespace EvolutionRacingServer.Services
@@ -63,6 +61,8 @@ namespace EvolutionRacingServer.Services
         {
             var racer = GetVehicle(newCommand.VehicleId);
 
+
+            
             racer.Velocity += newCommand.GasPedalPosition;
             racer.Heading += newCommand.SteeringAngle;
 

@@ -7,12 +7,24 @@ namespace  EvolutionRacingModels
     {
         public Racer(string id)
         {
-            Id = id;
+            if (id == null)
+            {
+                Id = Guid.NewGuid().ToString();
+            } else
+            {
+                Id = id;
+            }
             Position = new Point(0, 0);
             Heading = 0;
             Velocity = 0;
         }
 
+        public Racer(Racer father, Racer mother)
+        {
+            string newId = Guid.NewGuid().ToString();
+            this.Id = newId;
+            //New properties based on evolution
+        }
 
         public string Id { get; set;  }
         public Point Position { get; set; }
@@ -22,6 +34,8 @@ namespace  EvolutionRacingModels
         public bool IsFinished { get; set; } = false;
 
         private VehicleState? _currentState = null;
+        
+
         public VehicleState CurrentState 
         { 
             get 
